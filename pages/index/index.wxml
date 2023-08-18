@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<view class="container">
+ <view class="search">
+    <navigator url="/pages/search/search" class="input jhx_bg1">
+      <image class="icon"></image>
+      <text class="txt jhx_f1">商品搜索, 共{{goodsCount}}款供您选择...</text>
+    </navigator>
+  </view>
+  <swiper class="banner" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
+    <swiper-item wx:for="{{banner}}" wx:key="id">
+      <image src="{{item.url}}" background-size="cover"></image>
+    </swiper-item>
+  </swiper>
+  <view class="m-menu jhx_bg0">
+    <navigator hover-class="none" class="item" url="/pages/category/category?id={{item.id}}" wx:for="{{channel}}" wx:key="id">
+      <image src="{{item.iconUrl}}" background-size="cover"></image>
+      <text class="jhx_f2">{{item.name}}</text>
+    </navigator>
+  </view>
+
+ 
+  <view class="a-section a-topic" wx:if="topics.length > 0">
+    
+    <view class="b">
+      <scroll-view scroll-x class="list">
+        <view class="item" wx:for="{{topics}}" wx:for-index="index" wx:for-item="item" wx:key="id">
+          <navigator url="../topicDetail/topicDetail?id={{item.id}}">
+            <image class="img" src="{{item.picUrl}}" background-size="cover"></image>
+          </navigator>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  
+</view>
+<coupon-window window='{{window}}' couponList="{{coupon}}" bind:onColse="onColse"></coupon-window>
+
