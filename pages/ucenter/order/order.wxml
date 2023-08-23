@@ -18,7 +18,7 @@
   </view>
   <view class="no-order" wx:if="{{orderList.length <= 0}}">
     <view class="c">
-      <image src="/static/images/noCart.png" />
+      <image src="/static/images/noData.png" />
     </view>
   </view>
 

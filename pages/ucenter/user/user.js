@@ -32,14 +32,14 @@ Page({
       that.getUserSharedUrl();
     }
   },
-  getUserSharedUrl: function () {
-    let that = this;
-    util.request(api.GetSharedUrl).then(function (res) {
-      that.setData({
-        userSharedUrl: res.data.userSharedUrl
-      });
-    });
-  },
+//   getUserSharedUrl: function () {
+//     let that = this;
+//     util.request(api.GetSharedUrl).then(function (res) {
+//       that.setData({
+//         userSharedUrl: res.data.userSharedUrl
+//       });
+//     });
+//   },
   applyAgency: function () {
     let that = this;
     if (!this.data.hasLogin) {
